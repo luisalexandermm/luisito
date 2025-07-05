@@ -1,5 +1,4 @@
 /* Estilos generales */
-/* Estilos generales */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -16,7 +15,6 @@ header {
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: slideIn 1s ease-out;
 }
 
 header h1 {
@@ -41,13 +39,12 @@ nav a {
   background-color: #3cb371;
   padding: 10px 15px;
   border-radius: 25px;
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 nav a:hover {
   background-color: #2e7d4f;
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Secciones */
@@ -59,9 +56,9 @@ section {
 }
 
 section h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   color: #006400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Animación de entrada */
@@ -76,16 +73,6 @@ section h2 {
   }
 }
 
-/* Animación de entrada del encabezado */
-@keyframes slideIn {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
 /* Pie de página */
 footer {
   background-color: #2e8b57;
@@ -93,10 +80,9 @@ footer {
   text-align: center;
   padding: 15px;
   font-size: 0.9em;
-  margin-top: 40px;
 }
 
-/* Estilos responsivos */
+/* Responsive */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -107,17 +93,4 @@ footer {
     width: 80%;
     text-align: center;
   }
-
-  section h2 {
-    font-size: 2em;
-  }
-}
-
-/* Efectos en las secciones */
-section:nth-child(even) {
-  background-color: #eafaf0;
-}
-
-section:nth-child(odd) {
-  background-color: #f5fff8;
 }
