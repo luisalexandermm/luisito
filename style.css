@@ -1,70 +1,49 @@
-
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5fff8;
-  color: #2f4f4f;
-  line-height: 1.6;
+  background-color: #f0f4f8; /* Color de fondo suave */
+  color: #333;
+  line-height: 1.7;
 }
+
 /* Encabezado */
 header {
-  background-color: #2e8b57;
+  background-color: #009688; /* Verde vibrante */
   color: white;
-  padding: 20px 0;
+  padding: 40px 0;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: fadeInHeader 1s ease-out; /* Animación de entrada */
 }
 
-/* Navegación */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #00796b;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  animation: expandLine 1s ease-in-out forwards; /* Efecto de línea de expansión */
 }
 
-nav a {
-  text-decoration: none;
-  color: white;
-  background-color: #3cb371;
-  padding: 10px 15px;
-  border-radius: 25px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-nav a:hover {
-  background-color: #2e7d4f;
-  transform: scale(1.05);
-}
-
-/* Secciones */
-section {
-  padding: 60px 20px;
-  text-align: center;
-  border-bottom: 1px solid #e0e0e0;
-  animation: fadeIn 1s ease;
-}
-
-section h2 {
-  font-size: 2em;
-  color: #006400;
-  margin-bottom: 10px;
-}
-
-/* Animación de entrada */
-@keyframes fadeIn {
+/* Animaciones */
+@keyframes fadeInHeader {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;
@@ -72,13 +51,89 @@ section h2 {
   }
 }
 
+@keyframes expandLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Navegación */
+nav {
+  background-color: #00796b;
+  padding: 15px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+nav a:hover {
+  background-color: #004d40; /* Color más oscuro */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Secciones */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  margin: 50px 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Suavizado de transformación */
+}
+
+section:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+  font-size: 2.5em;
+  color: #009688;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+section p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
 /* Pie de página */
 footer {
-  background-color: #2e8b57;
+  background-color: #009688;
   color: white;
   text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
+  padding: 20px;
+  font-size: 1em;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
 }
 
 /* Responsive */
@@ -91,5 +146,19 @@ footer {
   nav a {
     width: 80%;
     text-align: center;
+    padding: 12px 0;
   }
+
+  section h2 {
+    font-size: 2em;
+  }
+}
+
+/* Efectos de las secciones */
+section:nth-child(even) {
+  background-color: #eafaf0; /* Color suave para las secciones pares */
+}
+
+section:nth-child(odd) {
+  background-color: #ffffff; /* Color blanco para las secciones impares */
 }
