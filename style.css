@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -7,7 +7,6 @@ body {
   color: #2f4f4f;
   line-height: 1.6;
 }
-
 /* Encabezado */
 header {
   background-color: #2e8b57;
